@@ -9,7 +9,7 @@ function Counter() {
         <div className="card">
             <p>Current Count is : {count} </p>
           <button onClick={() => setCount((count) => count + 1)}>
-            Increament
+            Increment
             </button>
             
             <button onClick={() => setCount((count) => count =0)}>
@@ -17,7 +17,7 @@ function Counter() {
           </button>
 
           <button onClick={() => setCount((count) => count - 1)}>
-            Decreament  
+            Decrement  
           </button>
     </div>
     </>
