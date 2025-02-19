@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from "../img/logo512.png";
-import service1 from "../img/service1.png";
-import service2 from "../img/service2.png";
-import service3 from "../img/service3.png";
+import logo from "../assets/images/logo512.png";
+import service1 from "../assets/images/service1.png";
+import service2 from "../assets/images/service2.png";
+import service3 from "../assets/images/service3.png";
 
 
 
@@ -23,7 +23,7 @@ function Services() {
            <li style={styles.listItem}>Market Analysis</li>
            <li style={styles.listItem}>Product Development</li>
          </ul>
-         <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
+         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
   <img src={service3} alt="Service 1" style={{ width: '250px', borderRadius: '20px' }} />
   <img src={service2} alt="Service 2" style={{ width: '250px', borderRadius: '20px' }} />
   <img src={service1} alt="Service 3" style={{ width: '250px', borderRadius: '20px' }} />
@@ -48,6 +48,10 @@ const styles = {
       fontSize: "32px",
     },
     list: {
+      display: 'flex', 
+      justifyContent: 'center', 
+      gap: '80px',
+      textAlign:'center',
       listStyleType: "none",
       padding: 0,
     },

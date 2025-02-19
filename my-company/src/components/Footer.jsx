@@ -38,6 +38,7 @@ const Footer = () => {
 
 const styles = {
   footer: {
+    borderRadius:'10px',
     backgroundColor: "#333",
     color: "white",
     padding: "20px 0",

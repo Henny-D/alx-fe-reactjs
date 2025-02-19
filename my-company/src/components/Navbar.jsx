@@ -26,6 +26,7 @@ function Navbar() {
 // Inline styles
 const styles = {
   navbar: {
+    borderRadius:'5px',
     backgroundColor: "#333",
     padding: "15px",
     textAlign: "center",

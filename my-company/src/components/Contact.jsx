@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import logo from "../img/logo512.png";
+import logo from "../assets/images/logo512.png";
 
 function Contact() {
   const [formData, setFormData] = useState({
