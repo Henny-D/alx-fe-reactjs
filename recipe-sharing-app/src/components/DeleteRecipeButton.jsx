@@ -1,12 +1,14 @@
 import React from 'react';
 import useRecipeStore from './recipeStore';
 
-const DeleteRecipeButton = ({ recipeId }) => {
-  const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
+const DeleteRecipeButton = ({ recipeId, onRecipeDeleted }) => { // Added onRecipeDeleted prop
+const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
 
-  const handleDelete = () => {
+const handleDelete = () => {
     deleteRecipe(recipeId);
-    // Optionally, redirect or show a confirmation
+    if (onRecipeDeleted) {  // Call the callback if it exists
+      onRecipeDeleted(); // Notify the parent component that the recipe is deleted
+    }
   };
 
   return (
@@ -15,4 +17,3 @@ const DeleteRecipeButton = ({ recipeId }) => {
 };
 
 export default DeleteRecipeButton;
-
