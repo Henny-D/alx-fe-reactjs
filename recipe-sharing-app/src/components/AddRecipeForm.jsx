@@ -14,7 +14,8 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+   
+     <form onSubmit={handleSubmit}  className="add-recipe-form">
       <input
         type="text"
         value={title}
@@ -27,7 +28,7 @@ const AddRecipeForm = () => {
         placeholder="Description"
       />
       <button type="submit">Add Recipe</button>
-    </form>
+      </form>
   );
 };
 
