@@ -1,14 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import useRecipeStore from './recipeStore';
 
-const DeleteRecipeButton = ({ recipeId, onRecipeDeleted }) => { // Added onRecipeDeleted prop
-const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
+const DeleteRecipeButton = ({ recipeId, onRecipeDeleted }) => {
+  const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
+  const navigate = useNavigate(); // Initialize useNavigate
 
-const handleDelete = () => {
+  const handleDelete = () => {
     deleteRecipe(recipeId);
-    if (onRecipeDeleted) {  // Call the callback if it exists
-      onRecipeDeleted(); // Notify the parent component that the recipe is deleted
+    if (onRecipeDeleted) {
+      onRecipeDeleted();
     }
+    navigate('/recipes'); // Redirect to the recipes list or any other page
   };
 
   return (

@@ -1,8 +1,10 @@
-import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import useRecipeStore from './recipeStore';
+import useRecipeStore from './RecipeStore';
 import EditRecipeForm from './EditRecipeForm';
 import DeleteRecipeButton from './DeleteRecipeButton';
+import { useState } from 'react';
+
+
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -10,12 +12,11 @@ const RecipeDetails = () => {
   const [isEditing, setIsEditing] = useState(false);
   const recipes = useRecipeStore((state) => state.recipes);
   const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
- 
-  const recipe = recipes.find((r) => r.id === parseInt(id));
 
-  if (!recipe) {
-    return <div>Recipe not found</div>;
-  }
+  const recipe = recipes.find((r) => r.id === parseInt(id));
+  
+  if (!recipe) return <p>Recipe not found.</p>;
+
   return (
     <div className="recipe-details">
       {isEditing ? (
