@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app-container">
         {/* Add the form and list components */}
         <AddRecipeForm />
 
