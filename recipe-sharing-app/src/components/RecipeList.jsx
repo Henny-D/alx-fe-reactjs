@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom';
-import useRecipeStore from './RecipeStore';
+import useRecipeStore from './recipeStore';
 import React, { useEffect} from 'react';
 
 const RecipeList = () => {
-  const recipes = useRecipeStore(state => state.recipes);
-  const searchTerm = useRecipeStore(state => state.searchTerm);
-  const ingredientTerm = useRecipeStore(state => state.ingredientTerm);
-  const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
-  const setSearchTerm = useRecipeStore(state => state.setSearchTerm);
-  const setIngredientTerm = useRecipeStore(state => state.setIngredientTerm);
-  const filterRecipes = useRecipeStore(state => state.filterRecipes);
+  const recipes = useRecipeStore((state) => state.recipes);
+  const searchTerm = useRecipeStore((state) => state.searchTerm);
+  const ingredientTerm = useRecipeStore((state) => state.ingredientTerm);
+  const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
+  const setSearchTerm = useRecipeStore((state) => state.setSearchTerm);
+  const setIngredientTerm = useRecipeStore((state) => state.setIngredientTerm);
+  const filterRecipes = useRecipeStore((state) => state.filterRecipes);
+  const favorites = useRecipeStore((state) => state.favorites);
+  const addFavorite = useRecipeStore((state) => state.addFavorite);
+  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
 
   useEffect(() => {
     filterRecipes(); // Automatically update when recipes, search term, or ingredient term change
@@ -19,6 +22,7 @@ const RecipeList = () => {
     <div className="container">
       <div className="filter-container">
         <h1>Recipe List</h1>
+
         {/* Search Bar */}
         <input
           type="text"
@@ -27,6 +31,7 @@ const RecipeList = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-bar"
         />
+
         {/* Ingredient Filter */}
         <div className="additional-filters">
           <label htmlFor="ingredients">Filter by Ingredients</label>
@@ -48,7 +53,26 @@ const RecipeList = () => {
             <div key={recipe.id} className="recipe-card">
               <h3>{recipe.title}</h3>
               <p>{recipe.description}</p>
-              <Link to={`/recipe/${recipe.id}`} className="btn btn-secondary">View Details</Link>
+              <Link to={`/recipe/${recipe.id}`} className="btn btn-secondary">
+                View Details
+              </Link>
+
+              {/* Favorite Button */}
+              {favorites.includes(recipe.id) ? (
+                <button
+                  className="btn btn-danger"
+                  onClick={() => removeFavorite(recipe.id)}
+                >
+                  Remove from Favorites ❤️
+                </button>
+              ) : (
+                <button
+                  className="btn btn-primary"
+                  onClick={() => addFavorite(recipe.id)}
+                >
+                  Add to Favorites 💙
+                </button>
+              )}
             </div>
           ))
         )}
@@ -56,5 +80,6 @@ const RecipeList = () => {
     </div>
   );
 };
+
 
 export default RecipeList;

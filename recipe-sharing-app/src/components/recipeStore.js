@@ -1,11 +1,23 @@
 
 import { create } from 'zustand';
 
+// Helper function to filter recipes based on search term and ingredients
+const filterRecipes = (recipes, searchTerm, ingredientTerm) => {
+  return recipes.filter(recipe =>
+    recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (ingredientTerm === '' || recipe.ingredients?.some(ing =>
+      ing.toLowerCase().includes(ingredientTerm.toLowerCase())
+    ))
+  );
+};
+
 const useRecipeStore = create((set) => ({
   recipes: [],
   searchTerm: '',
   ingredientTerm: '',
   filteredRecipes: [],
+  favorites: [], // Array to store favorite recipe IDs
+  recommendations: [], // Array to store recommended recipes
 
   // Add Recipe
   addRecipe: (newRecipe) => set((state) => ({
@@ -43,16 +55,25 @@ const useRecipeStore = create((set) => ({
     const filtered = filterRecipes(state.recipes, state.searchTerm, state.ingredientTerm);
     return { filteredRecipes: filtered };
   }),
-}));
 
-// Helper function to filter recipes based on search term and ingredients
-const filterRecipes = (recipes, searchTerm, ingredientTerm) => {
-  return recipes.filter(recipe =>
-    recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (ingredientTerm === '' || recipe.ingredients?.some(ing =>
-      ing.toLowerCase().includes(ingredientTerm.toLowerCase())
-    ))
-  );
-};
+  // Add a recipe to favorites
+  addFavorite: (recipeId) => set((state) => ({
+    favorites: [...state.favorites, recipeId]
+  })),
+
+  // Remove a recipe from favorites
+  removeFavorite: (recipeId) => set((state) => ({
+    favorites: state.favorites.filter(id => id !== recipeId)
+  })),
+
+  // Generate personalized recommendations based on favorite recipes
+  generateRecommendations: () => set((state) => {
+    // Basic mock logic for recommendations based on favorites
+    const recommended = state.recipes.filter(recipe =>
+      state.favorites.includes(recipe.id) && Math.random() > 0.5
+    );
+    return { recommendations: recommended };
+  }),
+}));
 
 export default useRecipeStore;
