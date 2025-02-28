@@ -1,238 +1,310 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  /* Recipe List */
-  .recipe-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .recipe-card {
-    background-color: white;
-    padding: 15px;
-    margin: 10px;
-    width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .recipe-card h3 {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  
-  .recipe-card p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  /* Add Recipe Form */
-  .add-recipe-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    width: 350px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(254, 191, 191, 0.1);
-  }
-  
-  .add-recipe-form input,
-  .add-recipe-form textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .add-recipe-form button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .add-recipe-form button:hover {
-    background-color: #218838;
-  }
-  
-  /* Recipe Details */
-  .recipe-details {
-    background-color: white;
-    padding: 20px;
-    width: 400px;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .recipe-details h1 {
-    color: #333;
-  }
-  
-  .recipe-details p {
-    color: #666;
-    font-size: 18px;
-  }
-  
-  .recipe-details ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .recipe-details li {
-    background: #e9ecef;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
-  }
-  
-  /* Buttons */
-  button {
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    margin-left: 10px;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-  
-  /* 🌟 Recipe List */
-  .recipe-list {
-    display: grid; /* Use grid for better layout */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 30px;
+/* 🌟 Recipe List */
+.recipe-list {
+  display: grid; /* Use grid for better layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 30px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* 🌟 Recipe Card */
+.recipe-card {
+  background: #fff; /* White background */
+  border: 1px solid #eee; /* Subtle border */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevents content from overflowing rounded corners */
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px); /* Lift up on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img { /* Add image styling */
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  margin-bottom: 15px;
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.recipe-card h3 {
+  color: #212529; /* Darker text */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.recipe-card p {
+  color: #555; /* Slightly lighter text */
+  font-size: 16px;
+  line-height: 1.6; /* Improved readability */
+}
+
+/* 🌟 Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 22px; /* Increased padding */
+  border-radius: 8px;
+  font-weight: 500; /* Slightly lighter font weight */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 10px 5px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-primary {
+  background: #007bff; /* Modern blue */
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0069d9;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+/* Add Recipe Form */
+.add-recipe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(254, 191, 191, 0.1);
+}
+
+.add-recipe-form input,
+.add-recipe-form textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-recipe-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.add-recipe-form button:hover {
+  background-color: #218838;
+}
+
+/* Recipe Details */
+.recipe-details {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-details h1 {
+  color: #333;
+}
+
+.recipe-details p {
+  color: #666;
+  font-size: 18px;
+}
+
+.recipe-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe-details li {
+  background: #e9ecef;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  margin-left: 10px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* 🌟 Recipe Search and Filters */
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  width: 25%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.additional-filters {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.additional-filters input {
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Heading */
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Input fields */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.modal-content textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  width: 15%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary {
+  background: #28a745;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #218838;
+}
+
+.btn-secondary {
+  background: #ff6c7d;
+  color: rgb(55, 32, 32);
+  width: 35%;
+}
+
+.btn-secondary:hover {
+  background: #c82333;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  /* 🌟 Recipe Card */
-  .recipe-card {
-    background: #fff; /* White background */
-    border: 1px solid #eee; /* Subtle border */
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Prevents content from overflowing rounded corners */
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .recipe-card:hover {
-    transform: translateY(-5px); /* Lift up on hover */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  .recipe-card img { /* Add image styling */
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0; /* Rounded top corners */
-    margin-bottom: 15px;
-    object-fit: cover; /* Maintain aspect ratio and cover container */
-  }
-  
-  
-  .recipe-card h3 {
-    color: #212529; /* Darker text */
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .recipe-card p {
-    color: #555; /* Slightly lighter text */
-    font-size: 16px;
-    line-height: 1.6; /* Improved readability */
-  }
-  
-  /* 🌟 Buttons */
-  .btn {
-    display: inline-block;
-    padding: 14px 22px; /* Increased padding */
-    border-radius: 8px;
-    font-weight: 500; /* Slightly lighter font weight */
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 10px 5px;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  .btn-primary {
-    background: #007bff; /* Modern blue */
-    color: white;
-  }
-  
-  .btn-primary:hover {
-    background: #0069d9;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
-  }
-  
-  .btn-danger {
-    background: #dc3545;
-    color: white;
-  }
-  
-  .btn-danger:hover {
-    background: #c82333;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-  }
-  
-  .btn-secondary {
-    background: #6c757d;
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background: #5a6268;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-  }
-  
-  
-  
-  /* 🌟 Modal */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Slightly lighter backdrop */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1050; /* Ensure modal is on top */
-  }
-  
-  .modal-content {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    width: 400px; /* Slightly wider modal */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
+}

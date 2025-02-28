@@ -34,7 +34,7 @@ const EditRecipeForm = ({ recipe, onClose }) => {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Recipe Description"
         />
-        <button onClick={handleSaveChanges} className="btn btn-primary">Save Changes</button>
+        <button onClick={handleSaveChanges} className="btn btn-primary">Save </button>
         <button onClick={onClose} className="btn btn-secondary">Cancel</button>
       </div>
     </div>
