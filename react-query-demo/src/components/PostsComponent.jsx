@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from 'react-query'
+import { isError, useQuery } from 'react-query'
 
 const fetchPosts =async () => {
     const response = await fetch ('https://jsonplaceholder.typicode.com/posts');
@@ -10,12 +10,12 @@ const fetchPosts =async () => {
 }
 
 function PostsComponent() {
-    const {data, error, isLoading, refetch } = useQuery('posts', fetchPosts, {
+    const {data, error, isLoading, isError, refetch } = useQuery('posts', fetchPosts, {
         staleTime:5*60*1000,
     });
     if (isLoading) return <div>Loading...</div>;
 
-    if (error) return <div>An error occurred:{error.message}</div>
+    if (isError) return <div>An error occurred:{error.message}</div>
 
   return (
     <div>
