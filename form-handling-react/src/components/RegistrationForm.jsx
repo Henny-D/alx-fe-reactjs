@@ -41,7 +41,7 @@ function RegistrationForm() {
                 <input
                 type="text"
                 name="username"
-                value={formData.username}
+                value={username}
                 onChange={handleChange}
                />
                {errors.username && <p style={{color:"red"}}> {errors.username}</p>
@@ -52,7 +52,7 @@ function RegistrationForm() {
                <input
                type="email"
                name="email"
-               value={formData.email}
+               value={email}
                onChange={handleChange}
               />
               {errors.email && <p style={{color:"red"}}> {errors.email}</p>
@@ -63,7 +63,7 @@ function RegistrationForm() {
                <input
                type="password"
                name="password"
-               value={formData.password}
+               value={password}
                onChange={handleChange}
               />
               {errors.password && <p style={{color:"red"}}> {errors.password}</p>
