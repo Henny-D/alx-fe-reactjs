@@ -18,8 +18,8 @@ function RegistrationForm() {
     const validateForm =()=>{
         let tempErrors={};
         if (!username)tempErrors.username="Username is required";
-        if (!email || !formData.email.includes ("@")) tempErrors.email= "Valid Email Adress is required";
-        if (!password || formData.password.length<3) tempErrors.password= "A valis password required (atleast 3 characters)");
+        if (!email ) tempErrors.email= "Valid Email Adress is required";
+        if (!password) tempErrors.password= "A valis password required (atleast 3 characters)");
 
         setErrors(tempErrors);
         return Object.keys(tempErrors).length===0;
