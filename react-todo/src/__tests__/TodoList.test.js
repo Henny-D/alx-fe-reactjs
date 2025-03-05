@@ -45,13 +45,13 @@ test("renders the TodoList component with initial todos", () => {
     const todoItem = screen.getByText(/Learn React/i);
     const deleteButtons = screen.getAllByText(/Delete/i);
   
-    // Find the delete button next to the todo item
+   
     const deleteButton = deleteButtons[0];
   
     fireEvent.click(deleteButton);
   
     await waitFor(() => {
-      // Wait for the todo item to be removed from the document
+      
       expect(todoItem).not.toBeInTheDocument();
     });
   });
