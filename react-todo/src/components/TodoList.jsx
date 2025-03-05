@@ -11,7 +11,7 @@ const TodoList = () => {
   ]);
   const [newTodo, setNewTodo] = useState("");
 
-  const addTodo = () => {
+  const AddTodoForm = () => {
     if (newTodo.trim() === "") return;
     setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
     setNewTodo("");
@@ -38,7 +38,7 @@ const TodoList = () => {
         onChange={(e) => setNewTodo(e.target.value)}
         placeholder="Add a new todo"
       />
-      <button onClick={addTodo}>Add</button>
+      <button onClick={AddTodoForm}>Add</button>
       <ul>
         {todos.map((todo) => (
           <li
