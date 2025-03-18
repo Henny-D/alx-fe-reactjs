@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const RecipeDetail = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const RecipeDetail = () => {
 
   return (
     <div className="container mx-auto p-6">
+        <Link to="/" className="text-blue-500 hover:underline">&larr; Back to Home</Link>
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <img src={recipe.image} alt={recipe.title} className="w-full h-64 object-cover" />
         <div className="p-6">
