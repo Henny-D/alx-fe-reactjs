@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTlu5r5MBwU3bXCtpXv0AaQgdif_V8ibpvBCeA63XwQr_Rl3UODnciJfDbeap4akTe84rnNABtm5oK64kltNIwj3LTRcLRHIXCydF4qAw"
+    },
+    {
+      "id": 2,
+      "title": "Chicken Tikka Masala",
+      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+      "image": "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Chicken-Tikka-Masala-tall-FS-58.webp"
+    }
+]
