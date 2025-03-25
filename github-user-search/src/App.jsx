@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SearchBar from "./components/SearchBar";
+import Search from "./components/Search";
 import UserCard from "./components/UserCard";
 import { fetchUserData } from "./services/githubService";
 
@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="app-container">
       <h1>GitHub User Search</h1>
-      <SearchBar onSearch={handleSearch} />
+      <Search onSearch={handleSearch} />
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {user && <UserCard user={user} />}
