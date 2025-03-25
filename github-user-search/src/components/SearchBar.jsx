@@ -1,9 +1,26 @@
-import React from 'react'
+import { useState } from "react";
 
-function SearchBar() {
+const SearchBar = ({ onSearch }) => {
+  const [username, setUsername] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username.trim()) {
+      onSearch(username);
+    }
+  };
+
   return (
-    <div>SearchBar</div>
-  )
-}
+    <form onSubmit={handleSubmit} className="search-form">
+      <input
+        type="text"
+        placeholder="Enter GitHub username..."
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
 
-export default SearchBar
+export default SearchBar;
